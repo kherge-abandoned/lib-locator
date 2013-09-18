@@ -11,76 +11,59 @@ An implementation of the service locator design pattern.
 Usage
 -----
 
-This example provides a very simple overview of the array accessible
-service locator. You may, however, want to have a better understanding
-of the `Locator` class first by reading through the API documentation.
-
 ```php
-use Phine\Locator\ArrayLocator;
+use Phine\Locator\Locator;
 use Phine\Locator\Service\AbstractService;
-use Phine\Locator\Service\DataService;
 use Phine\Locator\Service\ResolvableInterface;
 
 /**
- * Some sort of shared unique identifier for the data.
- *
- * If you build an application on top of this with the intent of supporting
- * third-party services, you will need to determine for yourself what is the
- * best way of sharing a service identifier for the data service. That is, if
- * you opt to use the bundled data service.
+ * A service that simply gets returned.
  */
-define('DATA', 'data');
+class SimpleService extends AbstractService
+{
+}
 
 /**
- * An example service that simple resolves into a string when used.
+ * A service that causes the locator to return something else.
  */
-class MyService extends AbstractService implements ResolvableInterface
+class ResolvedService extends AbstractService implements ResolvableInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public function getResolvedValue()
     {
-        $data = $this->locator->getService(DATA);
-
-        return sprintf(
-            "Date: %s\nTime: %d\nRandom: %d\n",
-            $data['date']->format('r'),
-            $data['time'],
-            $data['rand']
-        );
+        return 'Something else.';
     }
 }
 
+// create my locator
+$locator = new Locator();
 
-// create an instance of the data service
-$data = new DataService();
+// register my services
+$locator->registerService('simple', new SimpleService());
+$locator->registerService('resolved', new ResolvedService());
 
-// add some random data
-$data['date'] = new DateTime();
-$data['time'] = time();
-$data['rand'] = rand();
+// access my services
+echo get_class($locator->getService('simple')); // "SimpleService"
+echo $locator->resolveService('resolved'); // "Something else."
+```
 
-// create an array service locator
+Array accessible version of above:
+
+```php
+use Phine\Locator\ArrayLocator;
+
+// create my locator
 $locator = new ArrayLocator();
 
-// register some services
-$locator[DATA] = $data;
-$locator['my.service'] = new MyService();
+// register my services
+$locator['simple'] = new SimpleService();
+$locator['resolved'] = new ResolvedService();
 
-// retrieve the "my.service" service
-echo $locator['my.service'];
-
-/*
- * Due to how the array service locator manages the retrieval of registered
- * services, the resolved value of the custom service was returned instead
- * of an instance of the service itself:
- *
- * "Date: Tue, 17 Sep 2013 23:50:55 +0000
- * Time: 1379461855
- * Random: 908627826"
- *
- * If MyService did not implement the ResolvableInterface interface, it would
- * have simply returned the instance that was registered with the service
- * locator, which could be useful in other circumstances.
- */
+// access my services
+echo get_class($locator['simple']); // "SimpleService"
+echo $locator['resolved']; // "Something else."
 ```
 
 Requirement
