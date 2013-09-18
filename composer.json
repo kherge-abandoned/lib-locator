@@ -1,7 +1,7 @@
 {
     "name": "phine/locator",
     "description": "An implementation of the service locator design pattern.",
-    "keywords": ["exception"],
+    "keywords": ["service","locator"],
     "homepage": "https://github.com/phine/lib-locator",
     "license": "MIT",
     "authors": [
