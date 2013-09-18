@@ -37,6 +37,19 @@ class CallableServiceTest extends TestCase
     }
 
     /**
+     * Make sure that only valid callables are given.
+     */
+    public function testConstructInvalidCallable()
+    {
+        $this->setExpectedException(
+            'Phine\\Locator\\Exception\\ServiceException',
+            'The callable is not valid.'
+        );
+
+        new CallableService(123);
+    }
+
+    /**
      * Make sure that the callable is invoked.
      */
     public function testGetResolvedValue()

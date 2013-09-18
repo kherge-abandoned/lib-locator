@@ -2,6 +2,8 @@
 
 namespace Phine\Locator\Service;
 
+use Phine\Locator\Exception\ServiceException;
+
 /**
  * Makes a callable a resolvable service.
  *
@@ -33,9 +35,17 @@ class CallableService extends AbstractService implements ResolvableInterface
      *
      * @param callable $callable The callable.
      * @param boolean  $invoke   Invoke the callable?
+     *
+     * @throws ServiceException If `$callable` is not a callable.
      */
     public function __construct($callable, $invoke = true)
     {
+        if (!is_callable($callable)) {
+            throw new ServiceException(
+                'The callable is not valid.'
+            );
+        }
+
         $this->callable = $callable;
         $this->invoke = $invoke;
     }
