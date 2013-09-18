@@ -13,6 +13,12 @@ use Phine\Locator\Service\ServiceInterface;
 interface ArrayLocatorInterface extends ArrayAccess, LocatorInterface
 {
     /**
+     * Checks if the service with the unique identifier is registered.
+     *
+     * @param string $id The unique identifier.
+     *
+     * @return boolean Returns `true` if it is registered, `false` if not.
+     *
      * @see LocatorInterface::isServiceRegistered
      */
     public function offsetExists($id);
