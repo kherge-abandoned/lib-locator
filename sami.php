@@ -5,6 +5,7 @@ use Sami\Version\GitVersionCollection;
 use Symfony\Component\Finder\Finder;
 
 $versions = GitVersionCollection::create(__DIR__)
+    ->addFromMaster()
     ->addFromTags('*.*.0');
 
 return new Sami(
