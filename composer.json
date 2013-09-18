@@ -1,0 +1,38 @@
+{
+    "name": "phine/locator",
+    "description": "An implementation of the service locator design pattern.",
+    "keywords": ["exception"],
+    "homepage": "https://github.com/phine/lib-locator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Herrera",
+            "email": "kevin@herrera.io",
+            "homepage": "http://kevin.herrera.io"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/phine/lib-locator/issues"
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "phine/exception": "~1.0"
+    },
+    "require-dev": {
+        "league/phpunit-coverage-listener": "~1.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Phine\\Locator": "src/lib"
+        }
+    },
+    "config": {
+        "bin-dir": "bin",
+        "vendor-dir": "src/vendors"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
