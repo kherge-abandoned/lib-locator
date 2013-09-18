@@ -44,8 +44,8 @@ $data['rand'] = rand();
 define('DATA', 'data');
 
 $locator = new ArrayLocator();
-$locator->registerService(DATA, $data);
-$locator->registerService('my.service', new MyService());
+$locator[DATA] = $data;
+$locator['my.service'] = new MyService();
 
 echo $locator['my.service'];
 
@@ -83,5 +83,6 @@ This library is available under the [MIT license](LICENSE).
 [Coverage Status]: https://coveralls.io/repos/phine/lib-locator/badge.png
 [Latest Stable Version]: https://poser.pugx.org/phine/locator/v/stable.png
 [Total Downloads]: https://poser.pugx.org/phine/locator/downloads.png
+[Pimple]: https://github.com/fabpot/Pimple
 [Phine Exception]: https://github.com/phine/lib-exception
 [Composer]: http://getcomposer.org/
