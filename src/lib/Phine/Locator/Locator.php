@@ -18,7 +18,7 @@ class Locator implements LocatorInterface
      *
      * @var ServiceInterface[]|ResolvableInterface[]
      */
-    private $services;
+    private $services = array();
 
     /**
      * {@inheritDoc}
