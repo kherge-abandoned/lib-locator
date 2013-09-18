@@ -3,6 +3,7 @@
 namespace Phine\Locator;
 
 use ArrayAccess;
+use Phine\Locator\Service\ServiceInterface;
 
 /**
  * Defines how an array accessible service locator class must be implemented.
