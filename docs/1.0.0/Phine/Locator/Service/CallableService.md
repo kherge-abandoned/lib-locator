@@ -1,9 +1,9 @@
 <small>Phine\Locator\Service</small>
 
-ProtectedResolvableService
-==========================
+CallableService
+===============
 
-Protects the value of a resolvable service.
+Makes a callable a resolvable service.
 
 Signature
 ---------
@@ -17,21 +17,29 @@ Methods
 
 The class defines the following methods:
 
-- [`__construct()`](#__construct) &mdash; Sets the resolvable service.
+- [`__construct()`](#__construct) &mdash; Sets the callable.
 - [`getResolvedValue()`](#getResolvedValue) &mdash; Returns the value resolved by the service.
 
 ### `__construct()` <a name="__construct"></a>
 
-Sets the resolvable service.
+Sets the callable.
+
+#### Description
+
+The `$invoke` flag is used to determine if the given callable should
+be called every time the `getResolvedValue()` method is called, or if
+it should be returned instead. By setting it to `true` (the default),
+the callable will be invoked.
 
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
-    - `$service` ([`ServiceInterface`](../../../Phine/Locator/Service/ServiceInterface.md)) &mdash; The resolvable service.
+    - `$callable` ([`callable`](http://php.net/class.Phine\Locator\Service\callable)) &mdash; The callable.
+    - `$invoke` (`boolean`) &mdash; Invoke the callable?
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`ServiceException`](http://php.net/class.ServiceException) &mdash; If the service is not resolvable.
+    - [`ServiceException`](http://php.net/class.ServiceException) &mdash; If `$callable` is not a callable.
 
 ### `getResolvedValue()` <a name="getResolvedValue"></a>
 
