@@ -26,10 +26,7 @@ class Locator implements LocatorInterface
     public function getService($id)
     {
         if (!isset($this->services[$id])) {
-            throw LocatorException::createUsingFormat(
-                'The "%s" service unique identifier is not in use.',
-                $id
-            );
+            throw LocatorException::idNotUsed($id);
         }
 
         return $this->services[$id];
@@ -49,10 +46,7 @@ class Locator implements LocatorInterface
     public function isServiceResolvable($id)
     {
         if (!isset($this->services[$id])) {
-            throw LocatorException::createUsingFormat(
-                'The "%s" service unique identifier is not in use.',
-                $id
-            );
+            throw LocatorException::idNotUsed($id);
         }
 
         return ($this->services[$id] instanceof ResolvableInterface);
@@ -64,10 +58,7 @@ class Locator implements LocatorInterface
     public function unregisterService($id)
     {
         if (!isset($this->services[$id])) {
-            throw LocatorException::createUsingFormat(
-                'The "%s" service unique identifier is not in use.',
-                $id
-            );
+            throw LocatorException::idNotUsed($id);
         }
 
         unset($this->services[$id]);
@@ -79,10 +70,7 @@ class Locator implements LocatorInterface
     public function registerService($id, ServiceInterface $service)
     {
         if (isset($this->services[$id])) {
-            throw LocatorException::createUsingFormat(
-                'The "%s" service unique identifier is already in use.',
-                $id
-            );
+            throw LocatorException::idUsed($id);
         }
 
         $service->setLocator($this);
@@ -96,10 +84,7 @@ class Locator implements LocatorInterface
     public function replaceService($id, ServiceInterface $service)
     {
         if (!isset($this->services[$id])) {
-            throw LocatorException::createUsingFormat(
-                'The "%s" service unique identifier is not in use.',
-                $id
-            );
+            throw LocatorException::idNotUsed($id);
         }
 
         $service->setLocator($this);
@@ -113,17 +98,11 @@ class Locator implements LocatorInterface
     public function resolveService($id)
     {
         if (!isset($this->services[$id])) {
-            throw LocatorException::createUsingFormat(
-                'The "%s" service unique identifier is not in use.',
-                $id
-            );
+            throw LocatorException::idNotUsed($id);
         }
 
         if (!($this->services[$id] instanceof ResolvableInterface)) {
-            throw LocatorException::createUsingFormat(
-                'The "%s" service is not resolvable.',
-                $id
-            );
+            throw LocatorException::idNotResolvable($id);
         }
 
         return $this->services[$id]->getResolvedValue();
