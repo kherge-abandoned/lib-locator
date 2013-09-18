@@ -35,11 +35,11 @@ the callable will be invoked.
 
 - It is a **public** method.
 - It accepts the following parameter(s):
-    - `$callable` ([`callable`](http://php.net/class.Phine\Locator\Service\callable)) &mdash; The callable.
+    - `$callable` (`Phine\Locator\Service\callable`) &mdash; The callable.
     - `$invoke` (`boolean`) &mdash; Invoke the callable?
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`ServiceException`](http://php.net/class.ServiceException) &mdash; If `$callable` is not a callable.
+    - `ServiceException` &mdash; If `$callable` is not a callable.
 
 ### `getResolvedValue()` <a name="getResolvedValue"></a>
 
@@ -48,5 +48,6 @@ Returns the value resolved by the service.
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `mixed` value.
+- _Returns:_ The resolved value.
+    - `mixed`
 

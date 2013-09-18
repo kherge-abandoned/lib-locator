@@ -34,7 +34,8 @@ Returns the service registered with the unique identifier.
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$id` (`string`) &mdash; The unique identifier.
-- It returns a(n) [`ServiceInterface`](../../Phine/Locator/Service/ServiceInterface.md) value.
+- _Returns:_ The registered service.
+    - [`ServiceInterface`](../../Phine/Locator/Service/ServiceInterface.md)
 
 ### `getServiceId()` <a name="getServiceId"></a>
 
@@ -52,11 +53,11 @@ found keys will be returned instead.
 - It accepts the following parameter(s):
     - `$service` ([`ServiceInterface`](../../Phine/Locator/Service/ServiceInterface.md)) &mdash; The registered service.
     - `$first` (`boolean`) &mdash; Only return first identifier?
-- It can return one of the following values:
-
+- _Returns:_ The unique identifier(s).
     - `array`
-    - `string`- It throws one of the following exceptions:
-    - [`LocatorException`](http://php.net/class.LocatorException) &mdash; If the service is not registered.
+    - `string`
+- It throws one of the following exceptions:
+    - `LocatorException` &mdash; If the service is not registered.
 
 ### `isServiceRegistered()` <a name="isServiceRegistered"></a>
 
@@ -67,7 +68,8 @@ Checks if a service is registered with the unique identifier.
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$id` (`string`) &mdash; The unique identifier.
-- It returns a(n) `boolean` value.
+- _Returns:_ Returns `true` if it is registered, `false` if not.
+    - `boolean`
 
 ### `isServiceResolvable()` <a name="isServiceResolvable"></a>
 
@@ -78,9 +80,10 @@ Checks if a service is resolvable.
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$id` (`string`) &mdash; The unique identifier.
-- It returns a(n) `boolean` value.
+- _Returns:_ Returns `true` if it is resolvable, `false` if not.
+    - `boolean`
 - It throws one of the following exceptions:
-    - [`LocatorException`](http://php.net/class.LocatorException) &mdash; If the unique identifier is not in use.
+    - `LocatorException` &mdash; If the unique identifier is not in use.
 
 ### `unregisterService()` <a name="unregisterService"></a>
 
@@ -93,7 +96,7 @@ Unregisters a service with the unique identifier.
     - `$id` (`string`) &mdash; The unique identifier.
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`LocatorException`](http://php.net/class.LocatorException) &mdash; If the unique identifier is not in use.
+    - `LocatorException` &mdash; If the unique identifier is not in use.
 
 ### `registerService()` <a name="registerService"></a>
 
@@ -107,7 +110,7 @@ Registers a service with the unique identifier.
     - `$service` ([`ServiceInterface`](../../Phine/Locator/Service/ServiceInterface.md)) &mdash; The service.
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`LocatorException`](http://php.net/class.LocatorException) &mdash; If the unique identifier is already in use.
+    - `LocatorException` &mdash; If the unique identifier is already in use.
 
 ### `replaceService()` <a name="replaceService"></a>
 
@@ -121,7 +124,7 @@ Replaces the service registered with the unique identifier.
     - `$service` ([`ServiceInterface`](../../Phine/Locator/Service/ServiceInterface.md)) &mdash; The service.
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`LocatorException`](http://php.net/class.LocatorException) &mdash; If the unique identifier is not in use.
+    - `LocatorException` &mdash; If the unique identifier is not in use.
 
 ### `resolveService()` <a name="resolveService"></a>
 
@@ -132,7 +135,8 @@ Resolves a {@link ResolvableInterface} service and returns the value.
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$id` (`string`) &mdash; The unique identifier.
-- It returns a(n) `mixed` value.
+- _Returns:_ The service resolved value.
+    - `mixed`
 - It throws one of the following exceptions:
-    - [`LocatorException`](http://php.net/class.LocatorException) &mdash; If the service is not resolvable.
+    - `LocatorException` &mdash; If the service is not resolvable.
 

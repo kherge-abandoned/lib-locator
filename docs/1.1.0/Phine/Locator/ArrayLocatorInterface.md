@@ -58,10 +58,10 @@ returned instead.
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$id` (`string`) &mdash; The unique identifier.
-- It can return one of the following values:
-
-    - [`ServiceInterface`](http://php.net/class.Phine\Locator\ServiceInterface)
+- _Returns:_ The service or resolved value.
+    - `Phine\Locator\ServiceInterface`
     - `mixed`
+
 ### `offsetSet()` <a name="offsetSet"></a>
 
 Registers or replaces a service with the unique identifier.
@@ -84,7 +84,7 @@ that is already registered with the service locator.
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$id` (`string`) &mdash; The unique identifier.
-    - `$service` ([`ServiceInterface`](http://php.net/class.Phine\Locator\ServiceInterface)) &mdash; The service.
+    - `$service` (`Phine\Locator\ServiceInterface`) &mdash; The service.
 - It does not return anything.
 
 ### `offsetUnset()` <a name="offsetUnset"></a>

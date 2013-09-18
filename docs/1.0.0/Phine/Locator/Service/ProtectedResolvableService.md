@@ -31,7 +31,7 @@ Sets the resolvable service.
     - `$service` ([`ServiceInterface`](../../../Phine/Locator/Service/ServiceInterface.md)) &mdash; The resolvable service.
 - It does not return anything.
 - It throws one of the following exceptions:
-    - [`ServiceException`](http://php.net/class.ServiceException) &mdash; If the service is not resolvable.
+    - `ServiceException` &mdash; If the service is not resolvable.
 
 ### `getResolvedValue()` <a name="getResolvedValue"></a>
 
@@ -40,5 +40,6 @@ Returns the value resolved by the service.
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `mixed` value.
+- _Returns:_ The resolved value.
+    - `mixed`
 

@@ -24,5 +24,6 @@ Returns the value resolved by the service.
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) `mixed` value.
+- _Returns:_ The resolved value.
+    - `mixed`
 

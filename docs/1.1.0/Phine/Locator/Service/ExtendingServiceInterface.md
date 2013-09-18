@@ -33,5 +33,6 @@ Returns the service that is being extended.
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) [`ServiceInterface`](../../../Phine/Locator/Service/ServiceInterface.md) value.
+- _Returns:_ The extended service.
+    - [`ServiceInterface`](../../../Phine/Locator/Service/ServiceInterface.md)
 

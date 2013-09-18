@@ -17,19 +17,22 @@ Methods
 
 The class defines the following methods:
 
-- [`offsetExists()`](#offsetExists)
+- [`offsetExists()`](#offsetExists) &mdash; Checks if the service with the unique identifier is registered.
 - [`offsetGet()`](#offsetGet) &mdash; Returns the service with the unique identifier, or its resolved value.
 - [`offsetSet()`](#offsetSet) &mdash; Registers or replaces a service with the unique identifier.
 - [`offsetUnset()`](#offsetUnset) &mdash; Unregisters the service with the unique identifier, if registered.
 
 ### `offsetExists()` <a name="offsetExists"></a>
 
+Checks if the service with the unique identifier is registered.
+
 #### Signature
 
 - It is a **public** method.
 - It accepts the following parameter(s):
-    - `$id`
-- It does not return anything.
+    - `$id` (`string`) &mdash; The unique identifier.
+- _Returns:_ Returns `true` if it is registered, `false` if not.
+    - `boolean`
 
 ### `offsetGet()` <a name="offsetGet"></a>
 
@@ -47,10 +50,10 @@ returned instead.
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$id` (`string`) &mdash; The unique identifier.
-- It can return one of the following values:
-
-    - [`ServiceInterface`](http://php.net/class.Phine\Locator\ServiceInterface)
+- _Returns:_ The service or resolved value.
+    - [`ServiceInterface`](../../Phine/Locator/Service/ServiceInterface.md)
     - `mixed`
+
 ### `offsetSet()` <a name="offsetSet"></a>
 
 Registers or replaces a service with the unique identifier.
@@ -67,7 +70,7 @@ that is already registered with the service locator.
 - It is a **public** method.
 - It accepts the following parameter(s):
     - `$id` (`string`) &mdash; The unique identifier.
-    - `$service` ([`ServiceInterface`](http://php.net/class.Phine\Locator\ServiceInterface)) &mdash; The service.
+    - `$service` ([`ServiceInterface`](../../Phine/Locator/Service/ServiceInterface.md)) &mdash; The service.
 - It does not return anything.
 
 ### `offsetUnset()` <a name="offsetUnset"></a>

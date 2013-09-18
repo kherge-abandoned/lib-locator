@@ -27,7 +27,8 @@ Returns the service locator.
 #### Signature
 
 - It is a **public** method.
-- It returns a(n) [`LocatorInterface`](../../../Phine/Locator/LocatorInterface.md) value.
+- _Returns:_ The service locator.
+    - [`LocatorInterface`](../../../Phine/Locator/LocatorInterface.md)
 
 ### `setLocator()` <a name="setLocator"></a>
 
