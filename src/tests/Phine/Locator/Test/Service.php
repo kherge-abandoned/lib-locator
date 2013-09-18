@@ -2,8 +2,8 @@
 
 namespace Phine\Locator\Test;
 
-use Phine\Locator\AbstractService;
 use Phine\Locator\LocatorInterface;
+use Phine\Locator\Service\AbstractService;
 
 /**
  * An example service.

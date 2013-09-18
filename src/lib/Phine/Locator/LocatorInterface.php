@@ -3,6 +3,7 @@
 namespace Phine\Locator;
 
 use Phine\Locator\Exception\LocatorException;
+use Phine\Locator\Service\ServiceInterface;
 
 /**
  * Defines how a service locator class must be implemented.

@@ -2,8 +2,8 @@
 
 namespace Phine\Locator\Test;
 
-use Phine\Locator\AbstractService;
-use Phine\Locator\ResolvableInterface;
+use Phine\Locator\Service\AbstractService;
+use Phine\Locator\Service\ResolvableInterface;
 
 /**
  * An example resolvable service.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Phine\Locator;
+namespace Phine\Locator\Service;
 
 /**
  * Defines how a resolvable service class must be implemented.

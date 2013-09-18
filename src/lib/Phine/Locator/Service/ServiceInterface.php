@@ -1,6 +1,8 @@
 <?php
 
-namespace Phine\Locator;
+namespace Phine\Locator\Service;
+
+use Phine\Locator\LocatorInterface;
 
 /**
  * Defines how a service class must be implemented.

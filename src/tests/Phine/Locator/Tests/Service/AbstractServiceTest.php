@@ -1,6 +1,6 @@
 <?php
 
-namespace Phine\Locator\Tests;
+namespace Phine\Locator\Tests\Service;
 
 use Phine\Locator\Locator;
 use Phine\Locator\Test\Service;

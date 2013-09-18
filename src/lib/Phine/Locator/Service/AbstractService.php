@@ -1,6 +1,8 @@
 <?php
 
-namespace Phine\Locator;
+namespace Phine\Locator\Service;
+
+use Phine\Locator\LocatorInterface;
 
 /**
  * A basic implementation of {@link ServiceInterface}.

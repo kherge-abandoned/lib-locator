@@ -3,6 +3,8 @@
 namespace Phine\Locator;
 
 use Phine\Locator\Exception\LocatorException;
+use Phine\Locator\Service\ResolvableInterface;
+use Phine\Locator\Service\ServiceInterface;
 
 /**
  * A service locator.

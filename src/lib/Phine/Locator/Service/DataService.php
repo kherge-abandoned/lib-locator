@@ -4,7 +4,6 @@ namespace Phine\Locator\Service;
 
 use ArrayObject;
 use Phine\Locator\LocatorInterface;
-use Phine\Locator\ServiceInterface;
 
 /**
  * Allows data to be shared among services.
