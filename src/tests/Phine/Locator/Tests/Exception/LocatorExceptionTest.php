@@ -53,4 +53,18 @@ class LocatorExceptionTest extends TestCase
             'Make sure the message is formatted properly.'
         );
     }
+
+    /**
+     * Make sure that we get the expected message.
+     */
+    public function testNotRegistered()
+    {
+        $exception = LocatorException::notRegistered();
+
+        $this->assertEquals(
+            'The service is not registered.',
+            $exception->getMessage(),
+            'Make sure we get the expected message.'
+        );
+    }
 }

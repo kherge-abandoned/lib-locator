@@ -35,6 +35,24 @@ class Locator implements LocatorInterface
     /**
      * {@inheritDoc}
      */
+    public function getServiceId(ServiceInterface $service, $first = true)
+    {
+        if ($first) {
+            $key = array_search($service, $this->services, true);
+        } else {
+            $key = array_keys($this->services, $service, true);
+        }
+
+        if (empty($key)) {
+            throw LocatorException::notRegistered();
+        }
+
+        return $key;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function isServiceRegistered($id)
     {
         return isset($this->services[$id]);

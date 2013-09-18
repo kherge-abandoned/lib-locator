@@ -55,4 +55,16 @@ class LocatorException extends Exception
             $id
         );
     }
+
+    /**
+     * Creates an exception for a service that is not registered.
+     *
+     * @return LocatorException The new exception.
+     */
+    public static function notRegistered()
+    {
+        return new self(
+            'The service is not registered.'
+        );
+    }
 }

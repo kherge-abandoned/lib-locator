@@ -22,6 +22,22 @@ interface LocatorInterface
     public function getService($id);
 
     /**
+     * Returns the unique identifier for the registered service.
+     *
+     * If the service is registered multiple times under different keys, only
+     * the first key found will be returned. If `$first` is set to false, all
+     * found keys will be returned instead.
+     *
+     * @param ServiceInterface $service The registered service.
+     * @param boolean          $first   Only return first identifier?
+     *
+     * @return array|string The unique identifier(s).
+     *
+     * @throws LocatorException If the service is not registered.
+     */
+    public function getServiceId(ServiceInterface $service, $first = true);
+
+    /**
      * Checks if a service is registered with the unique identifier.
      *
      * @param string $id The unique identifier.

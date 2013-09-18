@@ -51,6 +51,50 @@ class LocatorTest extends TestCase
     }
 
     /**
+     * Make sure that we can get the unique identifiers for the service.
+     */
+    public function testGetServiceId()
+    {
+        $service = new Service();
+
+        set(
+            $this->locator,
+            'services',
+            array(
+                'a' => $service,
+                'b' => $service,
+            )
+        );
+
+        $this->assertEquals(
+            'a',
+            $this->locator->getServiceId($service),
+            'Make sure we get back the first identifier.'
+        );
+
+        $this->assertEquals(
+            array('a', 'b'),
+            $this->locator->getServiceId($service, false),
+            'Make sure we get all of the identifiers.'
+        );
+    }
+
+    /**
+     * Make sure that an exception is thrown if the service is not registered.
+     */
+    public function testGetServiceIdNotRegistered()
+    {
+        $service = new Service();
+
+        $this->setExpectedException(
+            'Phine\\Locator\\Exception\\LocatorException',
+            'The service is not registered.'
+        );
+
+        $this->locator->getServiceId($service);
+    }
+
+    /**
      * Make sure that we can check if a service is registered or not.
      */
     public function testIsServiceRegistered()
