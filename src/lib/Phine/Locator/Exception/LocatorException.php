@@ -5,7 +5,7 @@ namespace Phine\Locator\Exception;
 use Phine\Exception\Exception;
 
 /**
- * Exception thrown for problems with the locator.
+ * Exception thrown for problems with a locator.
  *
  * @author Kevin Herrera <kevin@herrera.io>
  */
