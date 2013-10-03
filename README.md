@@ -1,5 +1,5 @@
-Exception
-=========
+Locator
+=======
 
 [![Build Status][]](https://travis-ci.org/phine/lib-locator)
 [![Coverage Status][]](https://coveralls.io/r/phine/lib-locator)
