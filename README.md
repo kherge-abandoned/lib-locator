@@ -66,6 +66,11 @@ echo get_class($locator['simple']); // "SimpleService"
 echo $locator['resolved']; // "Something else."
 ```
 
+Examples
+--------
+
+Please see the [wiki][] for examples.
+
 Requirement
 -----------
 
@@ -94,5 +99,6 @@ This library is available under the [MIT license](LICENSE).
 [Latest Stable Version]: https://poser.pugx.org/phine/locator/v/stable.png
 [Total Downloads]: https://poser.pugx.org/phine/locator/downloads.png
 [Pimple]: https://github.com/fabpot/Pimple
+[wiki]: https://github.com/phine/lib-locator/wiki
 [Phine Exception]: https://github.com/phine/lib-exception
 [Composer]: http://getcomposer.org/
